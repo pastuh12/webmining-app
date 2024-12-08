@@ -1,7 +1,9 @@
 import { Grid, Avatar, Typography } from '@mui/material';
 import { textDefaultStyles } from '../styles/texts';
+import { useTranslation } from 'react-i18next';
 
 export const Header = () => {
+  const { t } = useTranslation();
   return (
     <Grid
       container
@@ -19,24 +21,22 @@ export const Header = () => {
       </Grid>
       <Grid item xs={12} md={8}>
         <Typography variant="h4" gutterBottom sx={textDefaultStyles}>
-          Тарасов Илья
+          {t('name')}
         </Typography>
         <Typography variant="body1" sx={textDefaultStyles}>
-          Факультет компьютерных технологий и прикладной математики
+          {t('fuc')}
         </Typography>
         <Typography variant="body1" sx={textDefaultStyles}>
-          Кафедра информационных технологий
+          {t('kaf')}
         </Typography>
         <Typography variant="body1" sx={textDefaultStyles}>
-          Специальность: «Технологии программирования и разработки
-          информационно-коммуникационных систем»
+          {t('spec')}
         </Typography>
         <Typography variant="body1" sx={textDefaultStyles}>
-          Диссертация: Исследование надежностных характеристик цифровой
-          образовательной среды с микросервисной архитектурой
+          {t('dis')}
         </Typography>
         <Typography variant="body1" sx={textDefaultStyles}>
-          Преподаватель: доц. кафедры Полетайкин Алексей Николаевич
+          {t('prep')}
         </Typography>
 
         <Typography variant="body1" sx={textDefaultStyles}></Typography>

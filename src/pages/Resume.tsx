@@ -1,23 +1,14 @@
 import React from 'react';
-import {
-  Box,
-  Grid,
-  Typography,
-  Table,
-  TableBody,
-  TableCell,
-  TableRow,
-  Paper,
-  Avatar,
-  SxProps,
-} from '@mui/material';
-import { Theme } from '@emotion/react';
+import { Box, Grid, Typography, Table, TableBody, Paper } from '@mui/material';
 import { pageGeneralStyles } from '../styles/pages';
 import { textDefaultStyles } from '../styles/texts';
 import { ResumeTableRow } from '../components/ResumePage/ResumeTableRow';
 import { Header } from '../components/Header';
+import { useTranslation } from 'react-i18next';
 
 const Resume: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <Box sx={pageGeneralStyles}>
       <Header />
@@ -26,50 +17,44 @@ const Resume: React.FC = () => {
           <Table>
             <TableBody>
               <ResumeTableRow
-                rowTitle={'ФИО'}
-                rowValue={'Тарасов Илья Андреевич'}
+                rowTitle={t('resume.fio')}
+                rowValue={t('resume.fiov')}
               />
               <ResumeTableRow
-                rowTitle={'Дата рождения'}
-                rowValue={'04.08.2001'}
+                rowTitle={t('resume.date')}
+                rowValue={t('resume.datev')}
               />
               <ResumeTableRow
-                rowTitle={'Место рождения'}
-                rowValue={'г. Краснодар, Российская Федерация'}
+                rowTitle={t('resume.birth')}
+                rowValue={t('resume.birthv')}
               />
               <ResumeTableRow
-                rowTitle={'Школа'}
-                rowValue={'2008-2019 гг.: МБОУ лицей №4, 1-11 класс'}
+                rowTitle={t('resume.school')}
+                rowValue={t('resume.schoolv')}
               />
               <ResumeTableRow
-                rowTitle={'ВУЗ'}
-                rowValue={'2019-2023 гг.: бакалавриат КубГУ'}
+                rowTitle={t('resume.vus')}
+                rowValue={t('resume.vusv')}
               />
               <ResumeTableRow
-                rowTitle={'Владение языками'}
-                rowValue={'Русский – родной, Английский – средний уровень'}
+                rowTitle={t('resume.len')}
+                rowValue={t('resume.lenv')}
               />
               <ResumeTableRow
-                rowTitle={'Увлечения'}
-                rowValue={
-                  'Книги (русская классика, научная фантастика, классическая литература), Музыка (рок, классика, романсы, электронная музыка), Кинематограф (Детектив)'
-                }
+                rowTitle={t('resume.hob')}
+                rowValue={t('resume.hobv')}
               />
               <ResumeTableRow
-                rowTitle={'Личные качества'}
-                rowValue={
-                  'делегирование задач, умение слушать собеседника, работа в команде, критичность, внимательность, пунктуальность'
-                }
+                rowTitle={t('resume.lich')}
+                rowValue={t('resume.lichv')}
               />
               <ResumeTableRow
-                rowTitle={
-                  'Профессиональная специализация и владение компьютером'
-                }
+                rowTitle={t('resume.compSpec')}
                 rowValue={
                   <Box>
                     <Box>
                       <Typography variant="h6" sx={textDefaultStyles}>
-                        Языки программирования
+                        {t('resume.leng')}
                       </Typography>
                       <Box sx={{ marginLeft: '10px' }}>
                         <Typography variant="body1" sx={textDefaultStyles}>
@@ -87,11 +72,11 @@ const Resume: React.FC = () => {
                       </Box>
                       <Box>
                         <Typography variant="h6" sx={textDefaultStyles}>
-                          Парадигмы программирования
+                          {t('resume.paradig')}
                         </Typography>
                         <Box sx={{ marginLeft: '10px' }}>
                           <Typography variant="body1" sx={textDefaultStyles}>
-                            ООП
+                            {t('oop')}
                           </Typography>
                         </Box>
                       </Box>
@@ -172,24 +157,19 @@ const Resume: React.FC = () => {
                 rowValue={'Курсы по NodeJS, Архитектуре и паттернам ООП'}
               />
               <ResumeTableRow
-                rowTitle={'Опыт работы'}
+                rowTitle={t('resume.workExp')}
                 rowValue={
                   <Box>
                     <Typography variant="body1" sx={textDefaultStyles}>
-                      Fojin, Nodejs разработчик, 0.5 года
+                      {t('resume.workExpv1')}
                     </Typography>
                     <Typography variant="body1" sx={textDefaultStyles}>
-                      Брусника, Fullstack разработчик, 1.5 года
+                      {t('resume.workExpv2')}
                     </Typography>
                   </Box>
                 }
               />
-              <ResumeTableRow
-                rowTitle={'Планы на будущее'}
-                rowValue={
-                  'Дальнейшее профессиональное и карьерное развитие в качестве разработчика ПО, в том числе изучение новых методик и паттернов программирования, фреймворков, технологий и языков программирования, исследовать настолько много мест в России, насколько это возможно	Дальнейшее профессиональное и карьерное развитие в качестве разработчика ПО, в том числе изучение новых методик и паттернов программирования, фреймворков, технологий и языков программирования, исследовать настолько много мест в России, насколько это возможно'
-                }
-              />
+              <ResumeTableRow rowTitle={t('future')} rowValue={t('futurev')} />
             </TableBody>
           </Table>
         </Paper>

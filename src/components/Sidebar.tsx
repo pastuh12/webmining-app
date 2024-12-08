@@ -29,7 +29,7 @@ const Sidebar: React.FC = () => {
     >
       <List>
         <ListItemButton component={Link} to="/resume" sx={navButtonStyles}>
-          <ListItemText primary={t('resume')} />
+          <ListItemText primary={t('resumeTitle')} />
         </ListItemButton>
         <ListItemButton component={Link} to="/biography" sx={navButtonStyles}>
           <ListItemText primary={t('biography')} />
